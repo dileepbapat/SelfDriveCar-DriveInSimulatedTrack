@@ -107,7 +107,7 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to identify the road lane using familiar convolutional network and then feed it to fully connected net to yield the steering angle.
 
 My first step was to use a convolution neural network model similar to the le net. I thought this model might be appropriate because it was
 used successfully in traffic sign classification so it has capability to detect basic shapes such as curbs.
@@ -159,7 +159,7 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 ![Center lane driving image][center]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from left:
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover from hitting the curbs. These images show what a recovery looks like starting from left:
 
 ![Left image][left]
 ![center image][center]

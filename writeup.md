@@ -80,7 +80,7 @@ more wide in x (horizontal axis) max pooling is 2, 4. Another important aspect o
 a line detection on x is more sensitive than on y, as car is deciding on left or right turn y small 
 variations will not be causing any issue. 
 
-The model includes Dense layers with ELU activation to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer. 
+The model includes Dense layers with ELU activation to introduce nonlinearity and the data is normalized in the model using a Keras lambda layer. 
 
 ####2. Attempts to reduce over-fitting in the model
 
@@ -130,9 +130,26 @@ As next improvements, I am trying inception model with 3 parallel convolutional 
 
 ####2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture (model.py) consisted of a convolution neural network with the following layers and layer sizes:
+```
+Sequential([
+     Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160,320,3)),
+     Cropping2D(((70, 25), (0,0))),
+     Conv2D(8, (5,5)),
+     MaxPooling2D((2,4)),
+     Conv2D(16,  (3,3)),
+     MaxPooling2D((2,4)),
+     Conv2D(24, (3,3)),
+     Flatten(),
+     Dropout(.4),
+     Dense(108, activation='elu'),
+     Dense(21, activation='elu'),
+     Dense(7, activation='elu'),
+     Dense(1)
+ ])
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+```
+Here is a visualization of the architecture 
 
 ![model architecture][model]
 

@@ -1,4 +1,4 @@
-#**Behavioral Cloning** 
+# **Behavioral Cloning** 
 
 #### Driving car in a simulated track to imitate the human actions for driving.
 
@@ -28,9 +28,9 @@ The goals/steps of this project are the following:
 
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Files in this project
+#### 1. Files in this project
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -38,7 +38,7 @@ My project includes the following files:
 * model.h5 containing a trained convolution neural network 
 * writeup_report.md summarizing the results
 
-####2. Submission includes functional code
+#### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven
 autonomously around the track by executing 
 ```sh
@@ -46,15 +46,15 @@ python drive.py model.h5
 ```
 Select Autonomous mode to start running the model controlled driving.
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
 The common functions are extracted for using with in-memory training or batch training.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model architecture has been employed
+#### 1. An appropriate model architecture has been employed
 
 
 
@@ -82,19 +82,19 @@ variations will not be causing any issue.
 
 The model includes Dense layers with ELU activation to introduce nonlinearity and the data is normalized in the model using a Keras lambda layer. 
 
-####2. Attempts to reduce over-fitting in the model
+#### 2. Attempts to reduce over-fitting in the model
 
 The model contains dropout layers in order to reduce over-fitting with drop ratio of 0.4.  
 
 The model was trained and validated on different data sets to ensure that the model was not over-fitting.
 The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate decay was used with adam optimizer. Number of epoch to run was 
 calibrated by running and comparing the cross-validation error. 
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 * Initially started with normal driving in the lane, with the mouse. however, I noticed that car was not 
 able to handle the edge cases when it goes close to curb near the turn.
@@ -103,9 +103,9 @@ A separate lap of training data was generated for recovering from the curbs.
 
 For details about how I created the training data, see the next section. 
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 The overall strategy for deriving a model architecture was to ...
 
@@ -128,7 +128,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 As next improvements, I am trying inception model with 3 parallel convolutional nets with different kernel size. 
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture (model.py) consisted of a convolution neural network with the following layers and layer sizes:
 ```
@@ -153,7 +153,7 @@ Here is a visualization of the architecture
 
 ![model architecture][model]
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
